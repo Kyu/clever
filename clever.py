@@ -21,6 +21,7 @@ class CleverBot(object):
         self.session = aiohttp.ClientSession(loop=self.loop)
         await self.session.post('https://cleverbot.io/1.0/create', data=body)
 
+    # Make non async-friendly
     async def query(self, text):
         body = {
             'user': self.user,
